@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配手机扫码观看 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全入场教育视频</title>
+    <style>
+        /* 页面样式：居中、简洁，适配手机 */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            font-family: "Microsoft Yahei", sans-serif;
+            text-align: center;
+        }
+        .title {
+            font-size: 24px;
+            color: #d9534f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .tip {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        /* 视频尺寸：适配手机和电脑 */
+        video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .countdown {
+            font-size: 18px;
+            color: #0066cc;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">海上技术研究中心安全入场教育视频</div>
+    <div class="tip">请完整观看以下3分钟视频，观看完毕后将自动跳转至签字页面！</div>
+    <div class="video-container">
+        <!-- 替换成你的视频播放直链 -->
+        <iframe src="https://docs.qq.com/doc/DZmt4c2tkUFBIVUxa" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="countdown" id="countdown">自动跳转倒计时：180秒</div>
+
+    <script>
+        // 自动跳转逻辑：180秒（3分钟）后跳转到签字页
+        let seconds = 180;
+        const countdownElement = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            seconds--;
+            countdownElement.innerText = `自动跳转倒计时：${seconds}秒`;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                // 替换成你的金数据签字页链接
+                window.location.href = "https://docs.qq.com/form/page/DZmdVVnRGc0tmb1Ni";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
